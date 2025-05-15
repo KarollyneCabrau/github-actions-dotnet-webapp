@@ -1,0 +1,23 @@
+name: Workflow Completo
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 * * * *'  # Executa a cada hora
+
+jobs:
+  exemplo:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ✅ Action pré-existente: checkout do código
+      - name: Fazer checkout do código
+        uses: actions/checkout@v3
+
+      # ✅ Script personalizado: comando seu
+      - name: Mensagem personalizada
+        run: |
+          echo "Olá, Karollyne!"
+          echo "Este é um script feito por você rodando no workflow! 🎉"
